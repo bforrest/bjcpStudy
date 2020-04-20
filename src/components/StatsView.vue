@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "stats-view",
+  name: "StatsView",
   props: {
     stats: Object,
   },
