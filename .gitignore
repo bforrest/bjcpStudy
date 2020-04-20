@@ -1,6 +1,13 @@
 .DS_Store
 node_modules
 /dist
+# dependencies
+/node_modules
+
+# testing
+/coverage
+/storybook-static
+.storybook
 
 # local env files
 .env.local
