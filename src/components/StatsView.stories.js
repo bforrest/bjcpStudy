@@ -1,3 +1,6 @@
+import {
+    action
+} from '@storybook/addon-actions';
 import StatsView from "./StatsView";
 
 export default {
@@ -18,6 +21,25 @@ export const Default = () => ({
         }
     },
 })
+
+export const Visible = () =>
+    ({
+        components: {
+            StatsView
+        },
+        template: statTemplate,
+        props: {
+            stats: {
+                default: () => stats
+            }
+        },
+        methods: {
+            action: action('clicked')
+        },
+        // mount: {
+        //     StatsView.onClick(),
+        // }
+    })
 
 const statTemplate = `<StatsView :stats="stats" />`;
 
