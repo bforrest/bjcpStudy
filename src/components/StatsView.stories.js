@@ -36,9 +36,9 @@ export const Visible = () =>
         methods: {
             action: action('clicked')
         },
-        // mount: {
-        //     StatsView.onClick(),
-        // }
+        data: {
+            hideStatus: false
+        }
     })
 
 const statTemplate = `<StatsView :stats="stats" />`;

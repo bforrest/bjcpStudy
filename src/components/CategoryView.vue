@@ -1,20 +1,28 @@
 <template>
-  <div>
-    <h2>Category {{ category.name }}</h2>
-    <p>{{ category.notes }}</p>
-    <SubCategoryView v-for="item in category.subcategory" :key="item.name" :subcategory="item" />
-  </div>
+  <section class="hero">
+    <div class="hero-body">
+      <h1 class="title">Category {{ category.name }}</h1>
+      <h2 class="subtitle">
+        {{ category.notes }}
+      </h2>
+      <SubCategoryView
+        v-for="item in category.subcategory"
+        :key="item.name"
+        :subcategory="item"
+      />
+    </div>
+  </section>
 </template>
 <script>
 import SubCategoryView from "@/components/SubCategoryView.vue";
 
 export default {
   components: {
-    SubCategoryView
+    SubCategoryView,
   },
   props: {
-    category: Object
-  }
+    category: Object,
+  },
 };
 </script>
 <style scoped>

@@ -1,6 +1,6 @@
 <template>
   <div v-if="stats">
-    <h5 @click="onClick">Stats</h5>
+    <button @click="onClick">Stats</button>
     <div v-if="!hideStats">
       <p>
         <b>IBU</b>
@@ -44,3 +44,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+h5 {
+  font-weight: bold;
+}
+</style>
