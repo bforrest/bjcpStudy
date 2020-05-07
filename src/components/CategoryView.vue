@@ -1,15 +1,18 @@
 <template>
   <section class="hero">
     <div class="hero-body">
-      <h1 class="title">Category {{ category.name }}</h1>
-      <h2 class="subtitle">
-        {{ category.notes }}
-      </h2>
-      <SubCategoryView
-        v-for="item in category.subcategory"
-        :key="item.name"
-        :subcategory="item"
-      />
+      <h1 class="title" @click="showCategory">
+        {{ category.name }}
+      </h1>
+      <div v-if="!hide">
+        <h2 class="subtitle">Category {{ category.id }}:</h2>
+        <p>{{ category.notes }}</p>
+        <SubCategoryView
+          v-for="item in category.subcategory"
+          :key="item.name"
+          :subcategory="item"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -23,25 +26,17 @@ export default {
   props: {
     category: Object,
   },
+  data: function() {
+    return {
+      hide: true,
+    };
+  },
+  methods: {
+    showCategory() {
+      this.$emit("showCategory");
+      this.hide = !this.hide;
+    },
+  },
 };
 </script>
-<style scoped>
-.location {
-  margin-bottom: 0;
-}
-.location > .icon {
-  margin-left: 10px;
-}
-.event-header > .title {
-  margin: 0;
-}
-.list-group {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.list-group > .list-item {
-  padding: 1em 0;
-  border-bottom: solid 1px #e5e5e5;
-}
-</style>
+<style scoped></style>

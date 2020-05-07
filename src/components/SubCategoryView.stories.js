@@ -1,3 +1,9 @@
+import {
+    action
+} from '@storybook/addon-actions';
+import {
+    linkTo
+} from '@storybook/addon-links';
 import SubCategoryView from "./SubCategoryView";
 import StatsView from "./StatsView";
 
@@ -16,7 +22,10 @@ export const Default = () => ({
         subcategory: {
             default: () => subcategory
         },
-    }
+    },
+    methods: {
+        action: linkTo('clicked')
+    },
 })
 
 const startTemplate = `<SubCategoryView :subcategory="subcategory" />`;

@@ -1,6 +1,7 @@
 <template>
   <div v-if="stats">
-    <button @click="onClick">Stats</button>
+    <font-awesome-icon icon="info-circle"></font-awesome-icon>
+    <button @click="toggleStats">Stats</button>
     <div v-if="!hideStats">
       <p>
         <b>IBU</b>
@@ -37,8 +38,8 @@ export default {
     };
   },
   methods: {
-    onClick() {
-      this.$emit("click");
+    toggleStats() {
+      this.$emit("toggleStats");
       this.hideStats = !this.hideStats;
     },
   },

@@ -1,14 +1,22 @@
 <template>
   <div id="app">
-    <font-awesome-icon icon="user-secret" />
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <NavBar />
     <router-view />
   </div>
 </template>
+<script
+  src="https://kit.fontawesome.com/ca782d2efe.js"
+  crossorigin="anonymous"
+></script>
+<script>
+import NavBar from "@/components/NavBar.vue";
 
+export default {
+  components: {
+    NavBar,
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

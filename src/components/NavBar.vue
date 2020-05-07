@@ -2,7 +2,7 @@
   <div id="nav" class="nav">
     <router-link to="/" class="brand">BJCP Beer Styles</router-link>
     <nav>
-      <router-link :to="{ name: 'category-lsit' }">Categories</router-link>|
+      <router-link :to="{ name: 'category-list' }">Categories</router-link>|
     </nav>
   </div>
 </template>

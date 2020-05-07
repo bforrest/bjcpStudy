@@ -13,4 +13,8 @@ export default {
     getCategories() {
         return apiClient.get('/categories')
     }
+
+    // getTagsMatching(tag) {
+    //     return apiClient.get()
+    // }
 }

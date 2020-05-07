@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>Style Categories</h1>
-    <CategoryView v-for="category in categories" :key="category.name" :category="category" />
+    <CategoryView
+      v-for="category in categories"
+      :key="category.id"
+      :category="category"
+    />
   </div>
 </template>
 
@@ -12,20 +16,20 @@ import CategoryView from "@/components/CategoryView.vue";
 export default {
   data() {
     return {
-      categories: []
+      categories: [],
     };
   },
   components: {
-    CategoryView
+    CategoryView,
   },
   created() {
     StyleService.getCategories()
-      .then(response => {
+      .then((response) => {
         this.categories = response.data; // <--- set the events data
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("There was an error:", error.response);
       });
-  }
+  },
 };
 </script>
